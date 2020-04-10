@@ -35,7 +35,9 @@ test('renders message', () => {
 // test for error when name is not included
 
 test('error when name left out', async () => {
-	const { getByLabelText, findByTestId, getByText } = render(<ContactForm />);
+	const { getByLabelText, findByTestId, getByText, getByTestId } = render(
+		<ContactForm />
+	);
 
 	const firstNameInput = getByText(/first name/i);
 	const lastNameInput = getByLabelText(/last name/i);
@@ -43,7 +45,7 @@ test('error when name left out', async () => {
 	const messageInput = getByLabelText(/message/i);
 
 	fireEvent.change(firstNameInput, {
-		target: { name: 'firstname', value: 'cds' },
+		target: { name: 'firstname', value: '' },
 	});
 	fireEvent.change(lastNameInput, {
 		target: { name: 'lastname', value: 'toughtimes' },

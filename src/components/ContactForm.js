@@ -19,6 +19,7 @@ const ContactForm = () => {
 						onChange={(e) => setData(e.target.value)}
 						value={data}
 						name="firstName"
+						data-testid=""
 						id="firsName"
 						placeholder="bill"
 						ref={register({ required: true, maxLength: 3 })}
@@ -66,6 +67,10 @@ const ContactForm = () => {
 						{JSON.stringify(data, null, 2)}
 					</pre>
 				)}
+				{/* <input type="submit" /> */}
+				<label data-testid="submit" htmlFor="button">
+					<input type="submit" id="button" />
+				</label>
 			</form>
 		</div>
 	);
