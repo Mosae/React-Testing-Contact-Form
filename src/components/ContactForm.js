@@ -16,10 +16,10 @@ const ContactForm = () => {
 				<div>
 					<label htmlFor="firstName">First Name*</label>
 					<input
-						onChange={(e) => setData(e.target.value)}
-						value={data}
+						// onChange={(e) => setData(e.target.value)}
+						// value={data}
 						name="firstName"
-						data-testid=""
+						data-testid="required-input"
 						id="firsName"
 						placeholder="bill"
 						ref={register({ required: true, maxLength: 3 })}
