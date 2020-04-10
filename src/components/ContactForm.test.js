@@ -8,6 +8,7 @@ import ContactForm from './ContactForm';
 // 	getByLabelText(/first name*/i);
 // });
 
+//basic tests to see if names are there
 test('renders First Name', () => {
 	const { getByText } = render(<ContactForm />);
 	const firstName = getByText(/first name/i);
@@ -42,7 +43,7 @@ test('error when name left out', async () => {
 	const messageInput = getByLabelText(/message/i);
 
 	fireEvent.change(firstNameInput, {
-		target: { name: 'firstname', value: '' },
+		target: { name: 'firstname', value: 'cds' },
 	});
 	fireEvent.change(lastNameInput, {
 		target: { name: 'lastname', value: 'toughtimes' },
